@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Jamstack blog`,
+    description: `Experimental blog built with react, gatsby, netlify & netlify cms.`,
+    author: `Alex Kim https://github.com/Alex-K1m`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -18,8 +18,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Jamstack blog`,
+        short_name: `jamstack`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
