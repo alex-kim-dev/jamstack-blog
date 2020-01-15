@@ -19,7 +19,7 @@ const IndexPage = () => (
       <Image />
     </Box>
     <Typography variant='body1'>
-      <Link to='/page-2/'>Go to page 2</Link>
+      <Link to='/blog'>View blog</Link>
     </Typography>
   </Layout>
 );
