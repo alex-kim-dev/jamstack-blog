@@ -22,7 +22,6 @@ collections:
       # name: Field name in the document front matter.
       # widget: Determines UI style and value data type. See docs.
       # default (optional): Sets a default value for the field.
-      - { label: Адрес, name: path }
       - { label: Дата публикации, name: date, widget: datetime }
       - { label: Заголовок, name: title }
       - { label: Содержание, name: body, widget: markdown }

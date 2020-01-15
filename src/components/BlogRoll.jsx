@@ -11,6 +11,9 @@ const BlogRoll = () => {
           node {
             excerpt(pruneLength: 400)
             id
+            fields {
+              slug
+            }
             frontmatter {
               path
               title
@@ -36,7 +39,7 @@ const BlogRoll = () => {
                 <p className='post-meta'>
                   <Link
                     className='title has-text-primary is-size-4'
-                    to={post.frontmatter.path}
+                    to={post.fields.slug}
                   >
                     {post.frontmatter.title}
                   </Link>
@@ -50,7 +53,7 @@ const BlogRoll = () => {
                 {post.excerpt}
                 <br />
                 <br />
-                <Link className='button' to={post.frontmatter.path}>
+                <Link className='button' to={post.fields.slug}>
                   Keep Reading →
                 </Link>
               </p>
