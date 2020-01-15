@@ -3,13 +3,14 @@ backend:
   repo: alex-k1m/jamstack
   # branch: master (default)
 
+locale: 'ru'
 publish_mode: editorial_workflow # adds an interface for drafting, reviewing, and approving posts
 media_folder: static/assets # specifies where uploaded files are saved in the repo
 public_folder: assets # indicates where they are found in the published site
 
 collections:
   - name: blog # Used in routes
-    label: Blog # Used in the UI
+    label: Блог # Used in the UI
     folder: blog # where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template
@@ -21,10 +22,10 @@ collections:
       # name: Field name in the document front matter.
       # widget: Determines UI style and value data type. See docs.
       # default (optional): Sets a default value for the field.
-      - { label: Path, name: path }
-      - { label: Publish Date, name: date, widget: datetime }
-      - { label: Title, name: title }
-      - { label: Body, name: body, widget: markdown }
-      # - { label: "Featured Image", name: thumbnail, widget: image }
-      # - { label: "Rating (scale of 1-5)", name: rating, widget: number }
+      - { label: Адрес, name: path }
+      - { label: Дата публикации, name: date, widget: datetime }
+      - { label: Заголовок, name: title }
+      - { label: Содержание, name: body, widget: markdown }
+      # - { label: Featured Image, name: thumbnail, widget: image }
+      # - { label: Rating (scale of 1-5), name: rating, widget: number }
       # - { label: Layout, name: layout, widget: hidden, default: blog }
