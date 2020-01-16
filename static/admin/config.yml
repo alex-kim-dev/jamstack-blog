@@ -22,9 +22,54 @@ collections:
       # name: Field name in the document front matter.
       # widget: Determines UI style and value data type. See docs.
       # default (optional): Sets a default value for the field.
-      - { label: Дата публикации, name: date, widget: datetime }
-      - { label: Заголовок, name: title }
-      - { label: Содержание, name: body, widget: markdown }
-      # - { label: Featured Image, name: thumbnail, widget: image }
-      # - { label: Rating (scale of 1-5), name: rating, widget: number }
-      # - { label: Layout, name: layout, widget: hidden, default: blog }
+      - label: Дата публикации
+        name: date
+        widget: datetime
+        dateFormat: DD.MM.YYYY
+        timeFormat: HH:mm
+
+      - label: Заголовок
+        name: title
+        widget: string
+
+      - label: Детали
+        name: details
+        widget: object
+        fields:
+
+        - label: Обложка
+          name: thumbnail
+          widget: image
+          allow_multiple: false
+
+        - label: Метки
+          name: tags
+          widget: list
+
+        - label: Рейтинг
+          name: rating
+          widget: select
+          options: [★, ★★, ★★★, ★★★★, ★★★★★]
+
+        - label: Спонсорский
+          name: sponsored
+          widget: boolean
+
+        - label: Время чтения (мин)
+          name: timeToRead
+          widget: number
+          min: 1
+          max: 60
+
+      - label: Отрывок
+        name: excerpt
+        widget: text
+
+      - label: Содержание
+        name: body
+        widget: markdown
+
+      - label: Макет
+        name: layout
+        widget: hidden
+        default: blog
