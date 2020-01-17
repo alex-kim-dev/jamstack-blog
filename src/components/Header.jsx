@@ -19,7 +19,7 @@ const Header = ({ siteTitle, maxWidth }) => {
     <AppBar component='header' position='static'>
       <Container maxWidth={maxWidth}>
         <Toolbar className={cls.toolbar}>
-          <Typography variant='h6' component='h1'>
+          <Typography variant='h6' component='h1' id='back-to-top-anchor'>
             {siteTitle}
           </Typography>
         </Toolbar>

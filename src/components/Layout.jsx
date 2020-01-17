@@ -8,6 +8,7 @@ import React from 'react';
 
 import Footer from './Footer';
 import Header from './Header';
+import ScrollTop from './ScrollTop';
 
 const maxWidth = 'md';
 
@@ -40,6 +41,7 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata.title} maxWidth={maxWidth} />
       <Container component='main' maxWidth={maxWidth} className={cls.main}>
         {children}
+        <ScrollTop />
       </Container>
       <Footer maxWidth={maxWidth} />
     </Box>
