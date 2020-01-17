@@ -1,32 +1,99 @@
+import Chip from '@material-ui/core/Chip';
+import Grid from '@material-ui/core/Grid';
+import { makeStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
+import Rating from '@material-ui/lab/Rating';
 import { graphql } from 'gatsby';
-import { shape, string } from 'prop-types';
+import { arrayOf, bool, number, shape, string } from 'prop-types';
 import React from 'react';
 
-const blogPost = ({
-  data: {
-    markdownRemark: { frontmatter, html },
+import Layout from '../components/Layout';
+import SEO from '../components/Seo';
+
+const useStyles = makeStyles(({ spacing }) => ({
+  detailsMargin: {
+    marginTop: spacing(1),
   },
-}) => (
-  <div className='blog-post-container'>
-    <div className='blog-post'>
-      <h1>{frontmatter.title}</h1>
-      <h2>{frontmatter.date}</h2>
-      <div
-        className='blog-post-content'
+}));
+
+const BlogPost = ({
+  data: {
+    markdownRemark: {
+      html,
+      frontmatter: {
+        date,
+        title,
+        details: { rating, sponsored, tags, thumbnail, timeToRead },
+      },
+    },
+  },
+}) => {
+  const cls = useStyles();
+
+  return (
+    <Layout>
+      <SEO title={title} />
+      <Typography variant='h2' align='center' gutterBottom>
+        {title}
+      </Typography>
+      <Grid container spacing={1}>
+        <Grid item xs>
+          <Typography variant='body2' color='textSecondary' noWrap>
+            {date}
+          </Typography>
+        </Grid>
+        <Grid item xs>
+          <Typography variant='body2' color='textSecondary' align='center'>
+            {sponsored && 'sponsored'}
+          </Typography>
+        </Grid>
+        <Grid item xs>
+          <Typography
+            variant='body2'
+            color='textSecondary'
+            align='right'
+          >{`${timeToRead} min`}</Typography>
+        </Grid>
+      </Grid>
+      <Grid container justify='space-between' className={cls.detailsMargin}>
+        <Grid item xs container spacing={1}>
+          {tags.map(tag => (
+            <Grid item key={tag}>
+              <Chip label={tag} size='small' />
+            </Grid>
+          ))}
+        </Grid>
+        <Grid item>
+          <Rating
+            size='small'
+            name='read-only'
+            value={rating.length}
+            readOnly
+          />
+        </Grid>
+      </Grid>
+      <article
         // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: html }}
       />
-    </div>
-  </div>
-);
+    </Layout>
+  );
+};
 
-blogPost.propTypes = {
+BlogPost.propTypes = {
   data: shape({
     markdownRemark: shape({
       html: string,
       frontmatter: shape({
         date: string,
         title: string,
+        details: shape({
+          rating: string,
+          sponsored: bool,
+          tags: arrayOf(string),
+          thumbnail: string,
+          timeToRead: number,
+        }),
       }),
     }),
   }).isRequired,
@@ -37,11 +104,18 @@ export const pageQuery = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "DD.MM.YYYY HH:MM")
         title
+        details {
+          rating
+          sponsored
+          tags
+          thumbnail
+          timeToRead
+        }
       }
     }
   }
 `;
 
-export default blogPost;
+export default BlogPost;

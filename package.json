@@ -7,6 +7,7 @@
   "dependencies": {
     "@material-ui/core": "^4.7.2",
     "@material-ui/icons": "^4.5.1",
+    "@material-ui/lab": "^4.0.0-alpha.39",
     "gatsby": "^2.18.11",
     "gatsby-image": "^2.2.36",
     "gatsby-plugin-manifest": "^2.2.33",
