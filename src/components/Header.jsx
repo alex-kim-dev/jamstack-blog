@@ -3,6 +3,7 @@ import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
+import { Link } from 'gatsby-theme-material-ui';
 import { string } from 'prop-types';
 import React from 'react';
 
@@ -20,7 +21,9 @@ const Header = ({ siteTitle, maxWidth }) => {
       <Container maxWidth={maxWidth}>
         <Toolbar className={cls.toolbar}>
           <Typography variant='h6' component='h1' id='back-to-top-anchor'>
-            {siteTitle}
+            <Link to='/' color='inherit'>
+              {siteTitle}
+            </Link>
           </Typography>
         </Toolbar>
       </Container>

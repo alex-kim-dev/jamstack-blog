@@ -5,7 +5,7 @@ import Typography from '@material-ui/core/Typography';
 import React from 'react';
 
 const Footer = () => (
-  <Box component='footer' mt='auto' p={2} bgcolor='#ccc'>
+  <Box component='footer' mt='auto' p={2}>
     <Container maxWidth='md'>
       <Typography variant='body2' align='center'>
         This experimental website is made by{' '}
