@@ -15,7 +15,6 @@ const BlogRoll = () => {
               slug
             }
             frontmatter {
-              path
               title
               date(formatString: "MMMM DD, YYYY")
             }
