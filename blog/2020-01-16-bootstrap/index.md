@@ -9,7 +9,7 @@ details:
     - ui
     - css
     - bootstrap
-  thumbnail: assets/bootstrap.png
+  thumbnail: bootstrap.png
   timeToRead: 3
 excerpt: >-
   Bootstrap is a popular front-end framework for web development. It contains
