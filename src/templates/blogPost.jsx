@@ -1,10 +1,12 @@
+import Box from '@material-ui/core/Box';
 import Chip from '@material-ui/core/Chip';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Rating from '@material-ui/lab/Rating';
 import { graphql } from 'gatsby';
-import { arrayOf, bool, number, shape, string } from 'prop-types';
+import Img from 'gatsby-image';
+import { arrayOf, bool, number, object, shape, string } from 'prop-types';
 import React from 'react';
 
 import Layout from '../components/Layout';
@@ -72,6 +74,9 @@ const BlogPost = ({
           />
         </Grid>
       </Grid>
+      <Box my={2}>
+        <Img fluid={thumbnail.childImageSharp.fluid} alt='Bootstrap ui' />
+      </Box>
       <article
         // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: html }}
@@ -91,7 +96,7 @@ BlogPost.propTypes = {
           rating: string,
           sponsored: bool,
           tags: arrayOf(string),
-          thumbnail: string,
+          thumbnail: shape({ childImageSharp: shape({ fluid: object }) }),
           timeToRead: number,
         }),
       }),
@@ -99,7 +104,7 @@ BlogPost.propTypes = {
   }).isRequired,
 };
 
-export const pageQuery = graphql`
+export const blogPostQuery = graphql`
   query($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
@@ -110,7 +115,13 @@ export const pageQuery = graphql`
           rating
           sponsored
           tags
-          thumbnail
+          thumbnail {
+            childImageSharp {
+              fluid(maxWidth: 900) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
           timeToRead
         }
       }
