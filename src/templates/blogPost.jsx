@@ -12,9 +12,28 @@ import React from 'react';
 import Layout from '../components/Layout';
 import SEO from '../components/Seo';
 
-const useStyles = makeStyles(({ spacing }) => ({
+const useStyles = makeStyles(({ spacing, palette }) => ({
   detailsMargin: {
     marginTop: spacing(1),
+  },
+  article: {
+    '& :not(pre) code': {
+      padding: '.1em .2em',
+      backgroundColor: 'rgba(0, 147, 135, 0.4)',
+      borderRadius: '.2em',
+    },
+    '& pre': {
+      padding: '1rem',
+      overflow: 'auto',
+      lineHeight: '1.5em',
+      backgroundColor: 'rgba(0, 147, 135, 0.4)',
+      borderRadius: '.2em',
+    },
+    '& blockquote': {
+      margin: `${spacing(1)}px ${spacing(2)}px`,
+      padding: `0 ${spacing(2)}px`,
+      borderLeft: `.25rem solid ${palette.primary.main}`,
+    },
   },
 }));
 
@@ -78,6 +97,7 @@ const BlogPost = ({
         <Img fluid={thumbnail.childImageSharp.fluid} alt='Bootstrap ui' />
       </Box>
       <article
+        className={cls.article}
         // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: html }}
       />
