@@ -2,6 +2,7 @@
 date: 2020-01-16T10:00:01.535Z
 title: Bootstrap
 details:
+  featuredImage: bootstrap.png
   rating: ★★★★
   sponsored: false
   tags:
@@ -9,7 +10,6 @@ details:
     - ui
     - css
     - bootstrap
-  featuredImage: bootstrap.png
   timeToRead: 3
 excerpt: >-
   Bootstrap is a popular front-end framework for web development. It contains
@@ -22,7 +22,7 @@ Bootstrap is a popular front-end framework for web development. It contains pre-
 
 Bootstrap includes a responsive grid system for varying layouts. It is a great starting point for building a mobile friendly website. It also includes optional JavaScript functionality like collapsible content, carousels, and modals.
 
-## Version History
+### Version History
 
 Twitter originally developed the Bootstrap framework as an internal tool. They released it as an open source project in August of 2011.
 
@@ -37,11 +37,11 @@ Bootstrap 4 was in development for two years before releasing some beta versions
 
 At the time of writing, Bootstrap’s latest release is [4.1.3](http://blog.getbootstrap.com/2018/07/24/bootstrap-4-1-3/). If you would like to keep up with any news of announcements, follow them [here](http://blog.getbootstrap.com/).
 
-## Installation
+### Installation
 
 There are two main options to add Bootstrap to your web project. You can link to publicly available sources, or download the framework directly.
 
-### Linking To Another Source
+#### Linking To Another Source
 
 You can add Bootstrap CSS by using a `<link>` element inside the `<head>` of your webpage that references a Content Delivery Network (CDN):
 
@@ -57,7 +57,7 @@ Adding the JavaScript elements of Bootstrap is similar with `<script>` elements 
 
 *Note: These are only examples and may change without notice. Please refer to a CDN for current links to include in your project.*
 
-### Download / Install
+#### Download / Install
 
 You can download and install the Bootstrap source files with Bower, Composer, Meteor, or npm. This allows greater control and the option to include or exclude modules as needed.
 
@@ -67,26 +67,26 @@ You can download and install the Bootstrap source files with Bower, Composer, Me
 
 *Note: These are only examples and may change without notice. Please refer to the <a href="https://getbootstrap.com/" target="_blank" rel="nofollow" alt="bootstrap official website">Bootstrap website</a> for the most up-to-date links.*
 
-## The Bootstrap Grid System
+### The Bootstrap Grid System
 
 The grid system is a mobile-first flexbox system for quickly building layouts of all shapes and sizes suitable on all devices. It’s based on a 12 column layout and has multiple tiers, one for each media query range.
 
 Bootstrap comes with predefined grid classes for your use in markup. See more details and examples at <https://getbootstrap.com/docs/4.1/layout/grid/>
 
-## Boostrap Features
+### Boostrap Features
 
 * Bootstrap 3 supports the latest versions of the Google Chrome, Firefox, Internet Explorer, Opera, and Safari (except on Windows). It additionally supports back to IE8 and the latest Firefox Extended Support Release (ESR).
 * Since 2.0, Bootstrap supports responsive web design. This means the layout of web pages adjusts dynamically, taking into account the characteristics of the device used (desktop, tablet, mobile phone).
 * Starting with version 3.0, Bootstrap adopted a mobile-first design philosophy, emphasizing responsive design by default.
 * Version 4.0 added Sass and flexbox support
 
-## More Information:
+### More Information:
 
 Bootstrap has thorough documentation with many [examples](https://getbootstrap.com/docs/4.0/examples/) and an [HTML template for getting started](https://getbootstrap.com/docs/4.0/getting-started/introduction/) (this template only has script included; it does not contain a set up of the grid system if that’s what you’re looking for).
 
 In addition, you can find both [free](https://bootswatch.com/) and [paid](https://themes.getbootstrap.com/) themes that build on the Bootstrap framework to provide a more customized and stylish look.
 
-## Bootstrap Resources:
+### Bootstrap Resources:
 
 * [Bootstrap’s offical blog](http://blog.getbootstrap.com/)
 * [Bootstrap site inspiration](http://expo.getbootstrap.com/)
