@@ -27,7 +27,7 @@ const BlogRoll = () => {
               date(formatString: "DD.MM.YYYY HH:MM")
               excerpt
               details {
-                thumbnail {
+                featuredImage {
                   childImageSharp {
                     fluid(maxWidth: 400) {
                       ...GatsbyImageSharpFluid
@@ -55,7 +55,7 @@ const BlogRoll = () => {
               frontmatter: {
                 title,
                 excerpt,
-                details: { thumbnail },
+                details: { featuredImage },
               },
             },
           }) => (
@@ -69,15 +69,15 @@ const BlogRoll = () => {
                           component={() => (
                             <Img
                               fluid={{
-                                ...thumbnail.childImageSharp.fluid,
+                                ...featuredImage.childImageSharp.fluid,
                                 aspectRatio: 4 / 3,
                               }}
                               alt={title}
                             />
                           )}
                           image='https://fakeimg.pl/250x100/'
-                          title='post thumbnail'
-                          alt='post thumbnail'
+                          title='featured Image'
+                          alt='featured Image'
                         />
                       </CardActionArea>
                     </Link>

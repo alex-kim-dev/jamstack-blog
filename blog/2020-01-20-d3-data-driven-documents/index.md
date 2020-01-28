@@ -9,7 +9,7 @@ details:
     - data
     - visualization
     - library
-  thumbnail: d3.png
+  featuredImage: d3.png
   timeToRead: 2
 excerpt: >-
   Data-Driven Documents (D3.js) is a JavaScript library for producing dynamic,

@@ -40,7 +40,7 @@ collections:
         fields:
 
         - label: Обложка
-          name: thumbnail
+          name: featuredImage
           widget: image
           allow_multiple: false
 

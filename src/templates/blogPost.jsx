@@ -44,7 +44,7 @@ const BlogPost = ({
       frontmatter: {
         date,
         title,
-        details: { rating, sponsored, tags, thumbnail, timeToRead },
+        details: { rating, sponsored, tags, featuredImage, timeToRead },
       },
     },
   },
@@ -94,7 +94,7 @@ const BlogPost = ({
         </Grid>
       </Grid>
       <Box my={2}>
-        <Img fluid={thumbnail.childImageSharp.fluid} alt='Bootstrap ui' />
+        <Img fluid={featuredImage.childImageSharp.fluid} alt='Bootstrap ui' />
       </Box>
       <article
         className={cls.article}
@@ -116,7 +116,7 @@ BlogPost.propTypes = {
           rating: string,
           sponsored: bool,
           tags: arrayOf(string),
-          thumbnail: shape({ childImageSharp: shape({ fluid: object }) }),
+          featuredImage: shape({ childImageSharp: shape({ fluid: object }) }),
           timeToRead: number,
         }),
       }),
@@ -135,7 +135,7 @@ export const blogPostQuery = graphql`
           rating
           sponsored
           tags
-          thumbnail {
+          featuredImage {
             childImageSharp {
               fluid(maxWidth: 900) {
                 ...GatsbyImageSharpFluid
