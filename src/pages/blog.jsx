@@ -1,3 +1,4 @@
+import Typography from '@material-ui/core/Typography';
 import React from 'react';
 
 import BlogRoll from '../components/BlogRoll';
@@ -7,12 +8,12 @@ import SEO from '../components/Seo';
 const BlogPage = () => (
   <Layout>
     <SEO title='Blog' />
-    <h1>Latest Posts</h1>
-    <section>
-      <div className='content'>
-        <BlogRoll />
-      </div>
-    </section>
+    <Typography variant='h2' align='center' gutterBottom>
+      Latest posts
+    </Typography>
+    <main>
+      <BlogRoll />
+    </main>
   </Layout>
 );
 
