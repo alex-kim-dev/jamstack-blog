@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: alex-k1m/jamstack
+  repo: alex-k1m/jamstack-blog
   # branch: master (default)
 
 locale: 'ru'

@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Jamstack blog`,
-    description: `Experimental blog built with react, gatsby, netlify & netlify cms.`,
+    title: `Jamstack Blog`,
+    description: `Experimental blog built with gatsby & netlify cms.`,
     author: `Alex Kim https://github.com/Alex-K1m`,
   },
   plugins: [
@@ -82,8 +82,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Jamstack blog`,
-        short_name: `jamstack`,
+        name: `Jamstack Blog`,
+        short_name: `Jamstack Blog`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
