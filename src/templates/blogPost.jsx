@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import Rating from '@material-ui/lab/Rating';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
-import { arrayOf, bool, number, object, shape, string } from 'prop-types';
+import { arrayOf, bool, number, shape, string } from 'prop-types';
 import React from 'react';
 
 import Layout from '../components/Layout';
@@ -78,7 +78,7 @@ const BlogPost = ({
       </Grid>
       <Grid container justify='space-between' className={cls.detailsMargin}>
         <Grid item xs container spacing={1}>
-          {tags.map(tag => (
+          {tags.map((tag) => (
             <Grid item key={tag}>
               <Chip label={tag} size='small' />
             </Grid>
@@ -116,7 +116,7 @@ BlogPost.propTypes = {
           rating: string,
           sponsored: bool,
           tags: arrayOf(string),
-          featuredImage: shape({ childImageSharp: shape({ fluid: object }) }),
+          featuredImage: shape({ childImageSharp: shape({ fluid: shape() }) }),
           timeToRead: number,
         }),
       }),
