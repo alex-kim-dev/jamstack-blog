@@ -17,15 +17,16 @@ excerpt: >-
   open source libraries in the world.
 layout: blog
 ---
+
 Node.js is a JavaScript runtime built on Chrome’s V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js’ package ecosystem, npm, is the largest ecosystem of open source libraries in the world.
 
 ### Let’s break it down.
 
-* Javascript runtime built on Chrome’s V8 JavaScript engine.\
-Every browser has a JavaSript engine built in it to process JavaScript files contained in websites. Google Chrome uses V8 engine which is built using C++. Node.js also uses this super-fast engine to interpret JavaScript files.
-* Node.js uses an event-driven model.\
+- Javascript runtime built on Chrome’s V8 JavaScript engine.\
+  Every browser has a JavaSript engine built in it to process JavaScript files contained in websites. Google Chrome uses V8 engine which is built using C++. Node.js also uses this super-fast engine to interpret JavaScript files.
+- Node.js uses an event-driven model.\
   This means that Node.js waits for certain events to take place. It then acts on those events. Events can be anything from a click to a HTTP request. We can also declare our own custom events and make node.js listen for those events.
-* Node.js uses a non-blocking I/O model.\
+- Node.js uses a non-blocking I/O model.\
   We know that I/O tasks take much longer than processing tasks. Node.js uses callback functions to handle such requests.
 
 Let us assume that a particular I/O task takes 5 secs to execute. And we want to perform this I/O twice in our code.
@@ -47,9 +48,9 @@ my_io_task()
 
 ```node
 function my_io_task() {
-    setTimeout(function() {
-      console.log('done');
-    }, 5000);
+  setTimeout(function () {
+    console.log('done');
+  }, 5000);
 }
 
 my_io_task();
@@ -64,6 +65,6 @@ When the timer completes it’s execution taking 5 seconds, it calls the functio
 
 ### More information:
 
-* [Official NodeJS site](https://nodejs.org/)
-* [Node Version Manager](https://github.com/creationix/nvm/blob/master/README.md)
-* [n: Interactive NodeJS Version Manager](https://github.com/tj/n)
+- [Official NodeJS site](https://nodejs.org/)
+- [Node Version Manager](https://github.com/creationix/nvm/blob/master/README.md)
+- [n: Interactive NodeJS Version Manager](https://github.com/tj/n)

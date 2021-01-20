@@ -18,6 +18,7 @@ excerpt: >-
   Bootstrap.
 layout: blog
 ---
+
 Bootstrap is a popular front-end framework for web development. It contains pre-built components and design elements to style HTML content. Modern browsers such as Chrome, Firefox, Opera, Safari, and Internet Explorer support Bootstrap.
 
 Bootstrap includes a responsive grid system for varying layouts. It is a great starting point for building a mobile friendly website. It also includes optional JavaScript functionality like collapsible content, carousels, and modals.
@@ -30,10 +31,10 @@ Bootstrap 2 was released in January 2012. One of the primary features was the in
 
 Bootstrap 4 was in development for two years before releasing some beta versions during 2017, while the first stable release was out in January 2018. Some notable changes include:
 
-* Moved from Less to Sass;
-* Moved to Flexbox and improved grid system;
-* Added cards (replacing wells, thumbnails, and panels);
-* And much more!
+- Moved from Less to Sass;
+- Moved to Flexbox and improved grid system;
+- Added cards (replacing wells, thumbnails, and panels);
+- And much more!
 
 At the time of writing, Bootstrap’s latest release is [4.1.3](http://blog.getbootstrap.com/2018/07/24/bootstrap-4-1-3/). If you would like to keep up with any news of announcements, follow them [here](http://blog.getbootstrap.com/).
 
@@ -50,12 +51,24 @@ You can add Bootstrap CSS by using a `<link>` element inside the `<head>` of you
 Adding the JavaScript elements of Bootstrap is similar with `<script>` elements usually placed at the bottom of your ‘’ tag. You may need to include some dependencies first. Pay special attention to the order listed:
 
 ```html
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+  integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+  integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+  crossorigin="anonymous"
+></script>
 ```
 
-*Note: These are only examples and may change without notice. Please refer to a CDN for current links to include in your project.*
+_Note: These are only examples and may change without notice. Please refer to a CDN for current links to include in your project._
 
 #### Download / Install
 
@@ -65,7 +78,7 @@ You can download and install the Bootstrap source files with Bower, Composer, Me
 
 `gem 'bootstrap', '~> 4.1.3'`
 
-*Note: These are only examples and may change without notice. Please refer to the <a href="https://getbootstrap.com/" target="_blank" rel="nofollow" alt="bootstrap official website">Bootstrap website</a> for the most up-to-date links.*
+_Note: These are only examples and may change without notice. Please refer to the <a href="https://getbootstrap.com/" target="_blank" rel="nofollow" alt="bootstrap official website">Bootstrap website</a> for the most up-to-date links._
 
 ### The Bootstrap Grid System
 
@@ -75,10 +88,10 @@ Bootstrap comes with predefined grid classes for your use in markup. See more de
 
 ### Boostrap Features
 
-* Bootstrap 3 supports the latest versions of the Google Chrome, Firefox, Internet Explorer, Opera, and Safari (except on Windows). It additionally supports back to IE8 and the latest Firefox Extended Support Release (ESR).
-* Since 2.0, Bootstrap supports responsive web design. This means the layout of web pages adjusts dynamically, taking into account the characteristics of the device used (desktop, tablet, mobile phone).
-* Starting with version 3.0, Bootstrap adopted a mobile-first design philosophy, emphasizing responsive design by default.
-* Version 4.0 added Sass and flexbox support
+- Bootstrap 3 supports the latest versions of the Google Chrome, Firefox, Internet Explorer, Opera, and Safari (except on Windows). It additionally supports back to IE8 and the latest Firefox Extended Support Release (ESR).
+- Since 2.0, Bootstrap supports responsive web design. This means the layout of web pages adjusts dynamically, taking into account the characteristics of the device used (desktop, tablet, mobile phone).
+- Starting with version 3.0, Bootstrap adopted a mobile-first design philosophy, emphasizing responsive design by default.
+- Version 4.0 added Sass and flexbox support
 
 ### More Information:
 
@@ -88,9 +101,9 @@ In addition, you can find both [free](https://bootswatch.com/) and [paid](https:
 
 ### Bootstrap Resources:
 
-* [Bootstrap’s offical blog](http://blog.getbootstrap.com/)
-* [Bootstrap site inspiration](http://expo.getbootstrap.com/)
-* [Showcase of sites built using Bootstrap](http://builtwithbootstrap.com/)
-* [HTML linter for projects using Bootstrap](https://github.com/twbs/bootlint)
-* [Design elements and code snippets for Bootstrap](https://bootsnipp.com/)
-* [Code, theme, and add-on resources for Bootstrap](http://expo.getbootstrap.com/resources/)
+- [Bootstrap’s offical blog](http://blog.getbootstrap.com/)
+- [Bootstrap site inspiration](http://expo.getbootstrap.com/)
+- [Showcase of sites built using Bootstrap](http://builtwithbootstrap.com/)
+- [HTML linter for projects using Bootstrap](https://github.com/twbs/bootlint)
+- [Design elements and code snippets for Bootstrap](https://bootsnipp.com/)
+- [Code, theme, and add-on resources for Bootstrap](http://expo.getbootstrap.com/resources/)

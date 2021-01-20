@@ -16,6 +16,7 @@ excerpt: >-
   documents and is the foundation of most websites today.
 layout: blog
 ---
+
 HyperText Markup Language (HTML) is a markup language used to construct online documents and is the foundation of most websites today. A markup languages like HTML allows us to
 
 1. create links to other documents
@@ -35,25 +36,23 @@ HTML5 Introduces a host of semantic elements. Though we discussed HTML helped to
 ```html
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Page Title</title>
-</head>
-<body>
-
-  <h1>My First Heading</h1>
-  <p>My first paragraph.</p>
-
-</body>
+  <head>
+    <title>Page Title</title>
+  </head>
+  <body>
+    <h1>My First Heading</h1>
+    <p>My first paragraph.</p>
+  </body>
 </html>
 ```
 
-* `!DOCTYPE html`: Defines this document to be HTML5
-* `html`: The root element of an HTML page
-* `head`: The element contains meta information about the document
-* `title`: The element specifies a title for the document
-* `body`: The element contains the visible page content
-* `h1`: The element defines a large heading
-* `p`: The element defines a paragraph
+- `!DOCTYPE html`: Defines this document to be HTML5
+- `html`: The root element of an HTML page
+- `head`: The element contains meta information about the document
+- `title`: The element specifies a title for the document
+- `body`: The element contains the visible page content
+- `h1`: The element defines a large heading
+- `p`: The element defines a paragraph
 
 ### HTML Versions
 
@@ -70,6 +69,6 @@ Since the early days of the web, there have been many versions of HTML
 
 #### Other Resources
 
-* [HTML Elements](https://guide.freecodecamp.org/html/elements)
-* [Semantic HTML](https://guide.freecodecamp.org/html/html5-semantic-elements)
-* [HTML Attributes](https://guide.freecodecamp.org/html/attributes)
+- [HTML Elements](https://guide.freecodecamp.org/html/elements)
+- [Semantic HTML](https://guide.freecodecamp.org/html/html5-semantic-elements)
+- [HTML Attributes](https://guide.freecodecamp.org/html/attributes)

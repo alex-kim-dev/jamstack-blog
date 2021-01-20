@@ -15,7 +15,7 @@ collections:
     # media files being saved in the same directory as the entry and the image field being populated with the relative path to the image:
     path: '{{slug}}/index'
     create: true # Allow users to create new documents in this collection
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}' # Filename template
     # filter:
     #   field: language
     #   value: en
@@ -38,30 +38,29 @@ collections:
         name: details
         widget: object
         fields:
+          - label: Обложка
+            name: featuredImage
+            widget: image
+            allow_multiple: false
 
-        - label: Обложка
-          name: featuredImage
-          widget: image
-          allow_multiple: false
+          - label: Метки
+            name: tags
+            widget: list
 
-        - label: Метки
-          name: tags
-          widget: list
+          - label: Рейтинг
+            name: rating
+            widget: select
+            options: [★, ★★, ★★★, ★★★★, ★★★★★]
 
-        - label: Рейтинг
-          name: rating
-          widget: select
-          options: [★, ★★, ★★★, ★★★★, ★★★★★]
+          - label: Спонсорский
+            name: sponsored
+            widget: boolean
 
-        - label: Спонсорский
-          name: sponsored
-          widget: boolean
-
-        - label: Время чтения (мин)
-          name: timeToRead
-          widget: number
-          min: 1
-          max: 60
+          - label: Время чтения (мин)
+            name: timeToRead
+            widget: number
+            min: 1
+            max: 60
 
       - label: Отрывок
         name: excerpt

@@ -19,6 +19,7 @@ excerpt: >-
   code.
 layout: blog
 ---
+
 Git is an open source distributed version control system created in 2005 by Linus Torvalds and others from the Linux development community. Git can work with many types of projects, but it’s most commonly used for software source code.
 
 Version control is a system that keeps track of changes to a file or group of files over time. When you have a history of these changes, it lets you find specific versions later, compare changes between versions, recover files you may have deleted, or revert files to previous versions.
@@ -27,7 +28,7 @@ A*distributed*version control system means that different users maintain their o
 
 When Git is initialized in a project directory, it begins tracking file changes and stores them as “change sets” or “patches.” Users working together on a project submit their change sets which are then included (or rejected) in the project.
 
-### Understand the Three Sections of a Git Project[](<>)
+### Understand the Three Sections of a Git Project[]()
 
 A Git project will have the following three main sections:
 
@@ -41,13 +42,13 @@ The **working directory** is where a user makes local changes to a project. The 
 
 The **staging area** is a file (also called the “index”, “stage”, or “cache”) that stores information about what will go into your next commit. A commit is when you tell Git to save these staged changes. Git takes a snapshot of the files as they are and permanently stores that snapshot in the Git directory.
 
-With three sections, there are three main states that a file can be in at any given time: committed, modified, or staged. You *modify* a file any time you make changes to it in your working directory. Next, it’s *staged* when you move it to the staging area. Finally, it’s *committed* after a commit.
+With three sections, there are three main states that a file can be in at any given time: committed, modified, or staged. You _modify_ a file any time you make changes to it in your working directory. Next, it’s _staged_ when you move it to the staging area. Finally, it’s _committed_ after a commit.
 
 ### Install Git
 
-* Ubuntu: `sudo apt-get install git`
-* Windows: [Download](https://git-scm.com/download/win)
-* Mac: [Download](https://git-scm.com/download/mac)
+- Ubuntu: `sudo apt-get install git`
+- Windows: [Download](https://git-scm.com/download/win)
+- Mac: [Download](https://git-scm.com/download/mac)
 
 ### Configure the Git Environment
 
@@ -108,9 +109,9 @@ man git-COMMAND
 
 This displays the manual page for the command in your shell window. To navigate, scroll with the up and down arrow keys or use the following keyboard shortcuts:
 
-* `f` or `spacebar` to page forward
-* `b` to page back
-* `q` to quit
+- `f` or `spacebar` to page forward
+- `b` to page back
+- `q` to quit
 
 ### Sources
 
@@ -118,5 +119,5 @@ This article uses information from the [Pro Git](https://github.com/progit/progi
 
 ### More Information:
 
-* For downloads, documentation, and a browser-based tutorial: [Git official website](https://git-scm.com/)
-* Most useful commands when you’re in bad GIT situation: [Oh shit, git!](http://ohshitgit.com/)
+- For downloads, documentation, and a browser-based tutorial: [Git official website](https://git-scm.com/)
+- Most useful commands when you’re in bad GIT situation: [Oh shit, git!](http://ohshitgit.com/)
