@@ -1,10 +1,10 @@
-const path = require(`path`);
+const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
 
-  if (node.internal.type === `MarkdownRemark`) {
+  if (node.internal.type === 'MarkdownRemark') {
     const value = createFilePath({ node, getNode });
     createNodeField({
       name: 'slug',
@@ -16,7 +16,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
-  const blogPostTemplate = path.resolve(`src/templates/blogPost.jsx`);
+  const blogPostTemplate = path.resolve('src/templates/blogPost.jsx');
   const result = await graphql(`
     {
       allMarkdownRemark(
@@ -36,7 +36,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   // Handle errors
   if (result.errors) {
-    reporter.panicOnBuild(`Error while running GraphQL query.`);
+    reporter.panicOnBuild('Error while running GraphQL query.');
     return;
   }
 
