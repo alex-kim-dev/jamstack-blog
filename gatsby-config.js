@@ -94,9 +94,15 @@ module.exports = {
     { resolve: 'gatsby-theme-material-ui' },
     {
       resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
-      options: { defaultSizes: 'gzip' },
+      options: {
+        defaultSizes: 'gzip',
+        analyzerMode: 'static',
+      },
     },
-    { resolve: 'gatsby-plugin-netlify-cms' },
+    {
+      resolve: 'gatsby-plugin-netlify-cms',
+      options: { enableIdentityWidget: false },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

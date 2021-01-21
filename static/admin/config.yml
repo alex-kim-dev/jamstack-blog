@@ -3,74 +3,74 @@ backend:
   repo: alex-k1m/jamstack-blog
   # branch: master (default)
 
-locale: 'ru'
 publish_mode: editorial_workflow # adds an interface for drafting, reviewing, and approving posts
 media_folder: static/assets # specifies where uploaded files are saved in the repo
 public_folder: assets # indicates where they are found in the published site
+site_url: https://alexkim-jamstack-blog.netlify.app
 
 collections:
   - name: blog # Used in routes
-    label: Блог # Used in the UI
+    label: Blog # Used in the UI
     folder: blog # where the documents are stored
     # media files being saved in the same directory as the entry and the image field being populated with the relative path to the image:
     path: '{{slug}}/index'
     create: true # Allow users to create new documents in this collection
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}' # Filename template
     # filter:
-    #   field: language
-    #   value: en
+    # field: language
+    # value: en
     fields: # The fields for each document, usually in front matter
       # label: Field label in the editor UI.
       # name: Field name in the document front matter.
       # widget: Determines UI style and value data type. See docs.
       # default (optional): Sets a default value for the field.
-      - label: Дата публикации
+      - label: Publication date
         name: date
         widget: datetime
         dateFormat: DD.MM.YYYY
         timeFormat: HH:mm
 
-      - label: Заголовок
+      - label: Title
         name: title
         widget: string
 
-      - label: Детали
+      - label: Details
         name: details
         widget: object
         fields:
-          - label: Обложка
+          - label: Featured image
             name: featuredImage
             widget: image
             allow_multiple: false
 
-          - label: Метки
+          - label: Tags
             name: tags
             widget: list
 
-          - label: Рейтинг
+          - label: Rating
             name: rating
             widget: select
             options: [★, ★★, ★★★, ★★★★, ★★★★★]
 
-          - label: Спонсорский
+          - label: Sponsored
             name: sponsored
             widget: boolean
 
-          - label: Время чтения (мин)
+          - label: Time to read
             name: timeToRead
             widget: number
             min: 1
             max: 60
 
-      - label: Отрывок
+      - label: Excerpt
         name: excerpt
         widget: text
 
-      - label: Содержание
+      - label: Content
         name: body
         widget: markdown
 
-      - label: Макет
+      - label: Layout
         name: layout
         widget: hidden
         default: blog
