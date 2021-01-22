@@ -19,3 +19,6 @@ rules:
   simple-import-sort/exports: error
   sort-imports: off
   import/order: off
+  react/require-default-props:
+    - error
+    - ignoreFunctionalComponents: true

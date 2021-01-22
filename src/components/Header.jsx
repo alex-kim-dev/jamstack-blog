@@ -13,7 +13,7 @@ const useTheme = makeStyles({
   },
 });
 
-const Header = ({ siteTitle, maxWidth }) => {
+const Header = ({ siteTitle = '', maxWidth }) => {
   const cls = useTheme();
 
   return (
@@ -34,10 +34,6 @@ const Header = ({ siteTitle, maxWidth }) => {
 Header.propTypes = {
   siteTitle: string,
   maxWidth: string.isRequired,
-};
-
-Header.defaultProps = {
-  siteTitle: ``,
 };
 
 export default Header;
