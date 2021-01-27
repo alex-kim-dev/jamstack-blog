@@ -3,6 +3,8 @@ import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
 import React from 'react';
 
+import SmartLink from './SmartLink';
+
 const components = {
   p: (props) => <Typography variant='body1' {...props} />,
 
@@ -27,6 +29,8 @@ const components = {
   ),
 
   li: (props) => <Typography component='li' variant='body1' {...props} />,
+
+  a: SmartLink,
 };
 
 export default components;

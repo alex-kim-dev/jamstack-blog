@@ -7,8 +7,9 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
-import { Link } from 'gatsby-theme-material-ui';
 import React from 'react';
+
+import Link from './SmartLink';
 
 const BlogRoll = () => {
   const {
@@ -61,7 +62,7 @@ const BlogRoll = () => {
               <Card>
                 <Grid container>
                   <Grid item xs={12} sm={5} md={4}>
-                    <Link to={slug}>
+                    <Link to={`/${slug}`}>
                       <CardActionArea>
                         <CardMedia
                           component={() => (
@@ -94,7 +95,7 @@ const BlogRoll = () => {
                         alignItems='center'
                       >
                         <Typography variant='subtitle2'>
-                          <Link to={slug}>Continue reading</Link>
+                          <Link to={`/${slug}`}>Continue reading</Link>
                         </Typography>
                         <Typography variant='body2' color='textSecondary'>
                           {`${timeToRead} min`}

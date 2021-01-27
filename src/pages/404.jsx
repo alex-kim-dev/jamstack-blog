@@ -1,9 +1,9 @@
 import Typography from '@material-ui/core/Typography';
-import { Link } from 'gatsby-theme-material-ui';
 import React from 'react';
 
 import Layout from '../components/Layout';
 import SEO from '../components/Seo';
+import Link from '../components/SmartLink';
 
 const NotFoundPage = () => (
   <Layout>
