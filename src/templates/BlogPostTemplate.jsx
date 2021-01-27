@@ -4,6 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Rating from '@material-ui/lab/Rating';
+import { MDXProvider } from '@mdx-js/react';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
@@ -11,6 +12,7 @@ import { arrayOf, bool, number, oneOf, shape, string } from 'prop-types';
 import React from 'react';
 
 import Layout from '../components/Layout';
+import MdxBodyComponents from '../components/MdxBodyComponents';
 import SEO from '../components/Seo';
 
 const useStyles = makeStyles(({ spacing, palette }) => ({
@@ -97,7 +99,9 @@ const BlogPost = ({
       <Box my={2}>
         <Img fluid={featuredImage.childImageSharp.fluid} alt='Bootstrap ui' />
       </Box>
-      <MDXRenderer>{body}</MDXRenderer>
+      <MDXProvider components={MdxBodyComponents}>
+        <MDXRenderer>{body}</MDXRenderer>
+      </MDXProvider>
     </Layout>
   );
 };
