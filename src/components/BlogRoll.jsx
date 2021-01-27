@@ -12,16 +12,14 @@ import React from 'react';
 
 const BlogRoll = () => {
   const {
-    allMarkdownRemark: { edges: posts },
+    allMdx: { edges: posts },
   } = useStaticQuery(graphql`
     query BlogRollQuery {
-      allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+      allMdx(sort: { order: DESC, fields: [frontmatter___date] }) {
         edges {
           node {
             id
-            fields {
-              slug
-            }
+            slug
             frontmatter {
               title
               date(formatString: "DD.MM.YYYY HH:MM")
@@ -51,7 +49,7 @@ const BlogRoll = () => {
             node: {
               id,
               timeToRead,
-              fields: { slug },
+              slug,
               frontmatter: {
                 title,
                 excerpt,

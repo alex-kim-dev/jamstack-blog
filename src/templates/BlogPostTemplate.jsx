@@ -6,7 +6,8 @@ import Typography from '@material-ui/core/Typography';
 import Rating from '@material-ui/lab/Rating';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
-import { arrayOf, bool, number, shape, string } from 'prop-types';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
+import { arrayOf, bool, number, oneOf, shape, string } from 'prop-types';
 import React from 'react';
 
 import Layout from '../components/Layout';
@@ -39,8 +40,8 @@ const useStyles = makeStyles(({ spacing, palette }) => ({
 
 const BlogPost = ({
   data: {
-    markdownRemark: {
-      html,
+    mdx: {
+      body,
       frontmatter: {
         date,
         title,
@@ -96,24 +97,20 @@ const BlogPost = ({
       <Box my={2}>
         <Img fluid={featuredImage.childImageSharp.fluid} alt='Bootstrap ui' />
       </Box>
-      <article
-        className={cls.article}
-        // eslint-disable-next-line react/no-danger
-        dangerouslySetInnerHTML={{ __html: html }}
-      />
+      <MDXRenderer>{body}</MDXRenderer>
     </Layout>
   );
 };
 
 BlogPost.propTypes = {
   data: shape({
-    markdownRemark: shape({
-      html: string,
+    mdx: shape({
+      body: string,
       frontmatter: shape({
         date: string,
         title: string,
         details: shape({
-          rating: string,
+          rating: oneOf(['★', '★★', '★★★', '★★★★', '★★★★★']),
           sponsored: bool,
           tags: arrayOf(string),
           featuredImage: shape({ childImageSharp: shape({ fluid: shape() }) }),
@@ -126,8 +123,8 @@ BlogPost.propTypes = {
 
 export const blogPostQuery = graphql`
   query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
+    mdx(slug: { eq: $slug }) {
+      body
       frontmatter {
         date(formatString: "DD.MM.YYYY HH:MM")
         title
