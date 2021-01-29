@@ -1,112 +1,35 @@
-import Box from '@material-ui/core/Box';
-import Chip from '@material-ui/core/Chip';
-import Grid from '@material-ui/core/Grid';
-import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import Rating from '@material-ui/lab/Rating';
-import { MDXProvider } from '@mdx-js/react';
 import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { arrayOf, bool, number, oneOf, shape, string } from 'prop-types';
 import React from 'react';
 
+import BlogPost from '../components/BlogPost';
 import Layout from '../components/Layout';
-import MdxBodyComponents from '../components/MdxBodyComponents';
 import SEO from '../components/Seo';
 
-const useStyles = makeStyles(({ spacing, palette }) => ({
-  detailsMargin: {
-    marginTop: spacing(1),
-  },
-  article: {
-    '& :not(pre) code': {
-      padding: '.1em .2em',
-      backgroundColor: 'rgba(0, 147, 135, 0.4)',
-      borderRadius: '.2em',
-    },
-    '& pre': {
-      padding: '1rem',
-      overflow: 'auto',
-      lineHeight: '1.5em',
-      backgroundColor: 'rgba(0, 147, 135, 0.4)',
-      borderRadius: '.2em',
-    },
-    '& blockquote': {
-      margin: `${spacing(1)}px ${spacing(2)}px`,
-      padding: `0 ${spacing(2)}px`,
-      borderLeft: `.25rem solid ${palette.primary.main}`,
-    },
-  },
-}));
-
-const BlogPost = ({
+const BlogPostTemplate = ({
   data: {
     mdx: {
       body,
-      frontmatter: {
-        date,
-        title,
-        details: { rating, sponsored, tags, featuredImage, timeToRead },
-      },
+      frontmatter: { date, title, details },
     },
   },
 }) => {
-  const cls = useStyles();
+  const postData = {
+    body,
+    date: new Date(date),
+    title,
+    details,
+  };
 
   return (
     <Layout>
       <SEO title={title} />
-      <Typography variant='h2' align='center' gutterBottom>
-        {title}
-      </Typography>
-      <Grid container spacing={1}>
-        <Grid item xs>
-          <Typography variant='body2' color='textSecondary' noWrap>
-            {date}
-          </Typography>
-        </Grid>
-        <Grid item xs>
-          <Typography variant='body2' color='textSecondary' align='center'>
-            {sponsored && 'sponsored'}
-          </Typography>
-        </Grid>
-        <Grid item xs>
-          <Typography
-            variant='body2'
-            color='textSecondary'
-            align='right'
-          >{`${timeToRead} min`}</Typography>
-        </Grid>
-      </Grid>
-      <Grid container justify='space-between' className={cls.detailsMargin}>
-        <Grid item xs container spacing={1}>
-          {tags.map((tag) => (
-            <Grid item key={tag}>
-              <Chip label={tag} size='small' />
-            </Grid>
-          ))}
-        </Grid>
-        <Grid item>
-          <Rating
-            size='small'
-            name='read-only'
-            value={rating.length}
-            readOnly
-          />
-        </Grid>
-      </Grid>
-      <Box my={2}>
-        <Img fluid={featuredImage.childImageSharp.fluid} alt='Bootstrap ui' />
-      </Box>
-      <MDXProvider components={MdxBodyComponents}>
-        <MDXRenderer>{body}</MDXRenderer>
-      </MDXProvider>
+      <BlogPost data={postData} />
     </Layout>
   );
 };
 
-BlogPost.propTypes = {
+BlogPostTemplate.propTypes = {
   data: shape({
     mdx: shape({
       body: string,
@@ -130,7 +53,7 @@ export const blogPostQuery = graphql`
     mdx(slug: { eq: $slug }) {
       body
       frontmatter {
-        date(formatString: "DD.MM.YYYY HH:MM")
+        date
         title
         details {
           rating
@@ -150,4 +73,4 @@ export const blogPostQuery = graphql`
   }
 `;
 
-export default BlogPost;
+export default BlogPostTemplate;
