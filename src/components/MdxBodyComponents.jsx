@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import Box from '@material-ui/core/Box';
 import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
@@ -30,7 +31,7 @@ const components = {
 
   li: (props) => <Typography component='li' variant='body1' {...props} />,
 
-  a: SmartLink,
+  a: ({ href, ...props }) => <SmartLink to={href} {...props} />,
 };
 
 export default components;
