@@ -4,12 +4,11 @@ import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Rating from '@material-ui/lab/Rating';
-import { MDXProvider } from '@mdx-js/react';
 import Img from 'gatsby-image';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
 import {
   arrayOf,
   bool,
+  element,
   instanceOf,
   number,
   oneOf,
@@ -18,8 +17,6 @@ import {
   string,
 } from 'prop-types';
 import React from 'react';
-
-import MdxBodyComponents from './MdxBodyComponents';
 
 const useStyles = makeStyles(({ spacing, palette }) => ({
   detailsMargin: {
@@ -108,20 +105,14 @@ const BlogPost = ({
           />
         )}
       </Box>
-      {preview ? (
-        <div>CMS body preview</div>
-      ) : (
-        <MDXProvider components={MdxBodyComponents}>
-          <MDXRenderer>{body}</MDXRenderer>
-        </MDXProvider>
-      )}
+      {body}
     </article>
   );
 };
 
 BlogPost.propTypes = {
   data: shape({
-    body: string,
+    body: element,
     date: instanceOf(Date),
     title: string,
     details: shape({

@@ -1,9 +1,12 @@
+import { MDXProvider } from '@mdx-js/react';
 import { graphql } from 'gatsby';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { arrayOf, bool, number, oneOf, shape, string } from 'prop-types';
 import React from 'react';
 
 import BlogPost from '../components/BlogPost';
 import Layout from '../components/Layout';
+import MdxBodyComponents from '../components/MdxBodyComponents';
 import SEO from '../components/Seo';
 
 const BlogPostTemplate = ({
@@ -14,8 +17,14 @@ const BlogPostTemplate = ({
     },
   },
 }) => {
+  const bodyWithRenderer = (
+    <MDXProvider components={MdxBodyComponents}>
+      <MDXRenderer>{body}</MDXRenderer>
+    </MDXProvider>
+  );
+
   const postData = {
-    body,
+    body: bodyWithRenderer,
     date: new Date(date),
     title,
     details,

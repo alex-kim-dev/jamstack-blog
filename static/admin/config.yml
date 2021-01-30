@@ -71,7 +71,7 @@ collections:
 
       - label: Content
         name: body
-        widget: markdown
+        widget: mdx
 
       - label: Layout
         name: layout
