@@ -14,6 +14,7 @@
     "fix": "eslint --fix --ext js,jsx .",
     "format": "prettier --write \"**/*.{json,yml,md}\"",
     "lint": "eslint --ext js,jsx .",
+    "postinstall": "husky install",
     "serve": "gatsby serve",
     "start": "gatsby develop",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
