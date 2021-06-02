@@ -58,7 +58,7 @@ BlogPostTemplate.propTypes = {
 };
 
 export const blogPostQuery = graphql`
-  query($slug: String!) {
+  query ($slug: String!) {
     mdx(slug: { eq: $slug }) {
       body
       frontmatter {
