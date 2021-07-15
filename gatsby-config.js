@@ -34,6 +34,7 @@ module.exports = {
       options: {
         defaultSizes: 'gzip',
         analyzerMode: 'static',
+        openAnalyzer: false,
       },
     },
     {

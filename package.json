@@ -9,7 +9,7 @@
   "homepage": "https://alexkim-jamstack-blog.netlify.app/",
   "bugs": "https://github.com/Alex-K1m/jamstack-blog/issues",
   "scripts": {
-    "build": "gatsby build",
+    "build": "gatsby build --verbose",
     "clean": "gatsby clean",
     "fix": "eslint --fix --ext js,jsx .",
     "format": "prettier --write \"**/*.{json,yml,md}\"",
