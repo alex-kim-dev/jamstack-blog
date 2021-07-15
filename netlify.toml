@@ -1,4 +1,3 @@
 [build]
-  publish = "public/"
-  command = "gatsby build"
-  environment = { NODE_ENV = "production" }
+  publish = "public"
+  command = "gatsby build --verbose"
