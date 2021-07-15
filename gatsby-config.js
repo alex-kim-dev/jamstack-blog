@@ -30,11 +30,9 @@ module.exports = {
     },
     { resolve: 'gatsby-theme-material-ui' },
     {
-      resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
+      resolve: 'gatsby-plugin-netlify-cms',
       options: {
-        defaultSizes: 'gzip',
-        analyzerMode: 'static',
-        openAnalyzer: false,
+        modulePath: `${__dirname}/src/cms/cms.js`,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
