@@ -78,7 +78,11 @@ const BlogPost = ({
           >{`${timeToRead} min`}</Typography>
         </Grid>
       </Grid>
-      <Grid container justify='space-between' className={cls.detailsMargin}>
+      <Grid
+        container
+        justifyContent='space-between'
+        className={cls.detailsMargin}
+      >
         <Grid item xs container spacing={1}>
           {tags.map((tag) => (
             <Grid item key={tag}>
